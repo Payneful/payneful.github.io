@@ -20,11 +20,11 @@ Fonts are separated by a | */
   --headline-color-on-color: #ffffff; /* headlines on a colored background */ 
   --paragraph-color-on-white: #001aff; /* paragraph text on a white background */ 
   --paragraph-color-on-color: #ffffff; /* paragraph text on a colored background */ 
-  --paragraph-background-color: #396E94;
+  --paragraph-background-color: #869198;
   --nav-link-color: #ffffff;
-  --nav-background-color: #0d7ad4;
-  --nav-hover-link-color: rgb(0, 0, 0);
-  --nav-hover-background-color: #85fff9;
+  --nav-background-color: #4A7B9D;
+  --nav-hover-link-color: white;
+  --nav-hover-background-color: #070B0D;
 }
 
 /*  Look around below...but DON'T CHANGE ANYTHING! */
