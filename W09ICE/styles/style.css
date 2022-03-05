@@ -1,0 +1,77 @@
+.content {
+    grid-column: 2;
+    max-width: 300px;
+    background-color: white;
+    border-radius: 15px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.title {
+    text-align: center;
+    grid-column: 2;
+}
+.img {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+#week {
+    font-family: 'Roboto Slab', serif;
+    color: rgb(25, 95, 175);
+    margin-bottom: -7%;
+}
+#post {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+}
+#Paragraph {
+    font-family: 'Roboto Slab', serif;
+    color: grey;
+    font-weight: 600;
+    padding-right: 3.7vw;
+    padding-left: 3.7vw;
+}
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    border-radius: 25px;
+    background-color: black;
+    max-height: 400px;
+    overflow: hidden;
+    position:fixed;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgb(25, 95, 175);
+    color: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+footer h1 {
+    font-weight: 100;
+    margin-bottom: 0;
+    font-size: 27px;
+    margin-top: 10px;
+}
+
+footer sup {
+    font-size: 18px;
+}
+
+footer p {
+    margin-top: 0;
+    font-size: 12px;
+}
+
+.one {
+    margin-top: -2px;
+}
+
+.two {
+    border-right: .1px solid gray;
+    border-left: .1px solid gray;
+}
