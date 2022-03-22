@@ -5,34 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Home</title>
+    <title>Lures and Species</title>
 </head>
 <body>
-    <header>
-        <a id="logo_link" href="index.html">
-            <img class="logo" src="images/fishinglogo.JPG" alt="Pro Fishing Logo">
-        </a>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="lures.html">Lures and Species</a>
-            <a href="locations.html">Locations</a>
-        </nav>
-    </header>
-    <main>
-        <h1>Lures and Species</h1>
-        <p>Here is a list of different species of fish. You are able to click on any of the fish 
-            to see what kind of lures may be good to catch them. These are lures that have either 
-            been used by me or someone I know, or by someone who has supported the website and has 
-            put in their lucky lure they used.</p>
-        <h3>Large Mouth Bass</h3>
-        <img src="images/bass.jpg" alt="Large Mouth Bass">
-        <h3>Typically Caught With:</h3>
-        <img src="images/worm.jpeg" alt="Watermelon worm">
-    </main>
-    <footer>
-        <h3>Pro Fishing &copy; 2022 - Bradley Payne</h3>
-        <h3><a href="site-plan.html">Site Plan</a></h3>
-        <h3><a href="#">Contact Us</a></h3>
-    </footer>
+    <div id="content">
+        <header>
+            <a id="logo_link" href="index.html">
+                <img class="logo" src="images/fishinglogoTest.JPG" alt="Pro Fishing Logo">
+            </a>
+            <h1 class="title">About Pro Fishing</h1>
+            <span class="pages" style="cursor:pointer" onclick="openNav()">&#9776;</span>
+        </header>
+
+        <!-- The overlay -->
+        <div id="myNav" class="overlay">
+
+            <!-- Button to close the overlay navigation -->
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        
+            <!-- Overlay content -->
+            <div class="overlay-content">
+                <a href="index.html">Home</a>
+                <a href="lures.html">Lures and Species</a>
+                <a href="locations.html">Locations</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+
+        <main>
+            <h1>Lures and Species</h1>
+            <p>Here is a list of different species of fish. You are able to click on any of the fish 
+                to see what kind of lures may be good to catch them. These are lures that have either 
+                been used by me or someone I know, or by someone who has supported the website and has 
+                put in their lucky lure they used.</p>
+            <h3>Large Mouth Bass</h3>
+            <img src="images/bass.jpg" alt="Large Mouth Bass">
+            <h3>Typically Caught With:</h3>
+            <img src="images/worm.jpeg" alt="Watermelon worm">
+        </main>
+        <footer>
+            <h3>Pro Fishing &copy; 2022 - Bradley Payne</h3>
+            <h3><a href="site-plan.html">Site Plan</a></h3>
+            <h3><a href="#">Contact Us</a></h3>
+        </footer>
+
+        <script>
+            function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+            }
+            
+            function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+            }
+        </script>
+    </div>
 </body>
 </html>

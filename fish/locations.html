@@ -5,36 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Home</title>
+    <title>Locations</title>
 </head>
 <body>
-    <header>
-        <a id="logo_link" href="index.html">
-            <img class="logo" src="images/fishinglogo.JPG" alt="Pro Fishing Logo">
-        </a>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="lures.html">Lures and Species</a>
-            <a href="locations.html">Locations</a>
-        </nav>
-    </header>
-    <main>
-        <h1>Locations</h1>
-        <p>Here are some pictures of states that you can click on. Each will populate different 
-            known bodies of water that are in the area. You can access each location shown and it 
-            will bring you to a list of different fish in that location. You can click on the fish
-             to get specific information on them.</p>
-        <img src="images/idaho-zoomed.jpg" alt="State of Idaho">
-        <img src="images/nevada-zoomed.jpg" alt="State of Nevada">
-        <h1>Bowman Reservoir</h1>
-        <img src="images/reservoir.jpg" alt="Bowman Reservoir">
-        <h2>Typically found here</h2>
-        <img src="images/bass.jpg" alt="Large Mouth Bass">
-    </main>
-    <footer>
-        <h3>Pro Fishing &copy; 2022 - Bradley Payne</h3>
-        <h3><a href="site-plan.html">Site Plan</a></h3>
-        <h3><a href="#">Contact Us</a></h3>
-    </footer>
+    <div id="content">
+        <header>
+            <a id="logo_link" href="index.html">
+                <img class="logo" src="images/fishinglogoTest.JPG" alt="Pro Fishing Logo">
+            </a>
+            <h1 class="title">About Pro Fishing</h1>
+            <span class="pages" style="cursor:pointer" onclick="openNav()">&#9776;</span>
+        </header>
+
+        <!-- The overlay -->
+        <div id="myNav" class="overlay">
+
+            <!-- Button to close the overlay navigation -->
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        
+            <!-- Overlay content -->
+            <div class="overlay-content">
+                <a href="index.html">Home</a>
+                <a href="lures.html">Lures and Species</a>
+                <a href="locations.html">Locations</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+
+        <main>
+            <h1>Locations</h1>
+            <p>Here are some pictures of states that you can click on. Each will populate different 
+                known bodies of water that are in the area. You can access each location shown and it 
+                will bring you to a list of different fish in that location. You can click on the fish
+                to get specific information on them.</p>
+            <img src="images/idaho-zoomed.jpg" alt="State of Idaho">
+            <img src="images/nevada-zoomed.jpg" alt="State of Nevada">
+            <h1>Bowman Reservoir</h1>
+            <img src="images/reservoir.jpg" alt="Bowman Reservoir">
+            <h2>Typically found here</h2>
+            <img src="images/bass.jpg" alt="Large Mouth Bass">
+        </main>
+        <footer>
+            <h3>Pro Fishing &copy; 2022 - Bradley Payne</h3>
+            <h3><a href="site-plan.html">Site Plan</a></h3>
+            <h3><a href="#">Contact Us</a></h3>
+        </footer>
+
+        <script>
+            function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+            }
+            
+            function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+            }
+        </script>
+    </div>
 </body>
 </html>
