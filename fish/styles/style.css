@@ -1,4 +1,4 @@
-body {
+.index {
   text-align: center;
 }
 footer {
@@ -21,16 +21,19 @@ header {
   margin: 0 auto;
   background-color: gray;
 }
+/*index.html page*/
 .home {
   display: grid;
   grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
   padding-left: 200px;
   padding-right: 200px;
 }
 .home p {
-  font-size: 1.1em;
+  font-size: 1.5em;
   grid-row: 2;
+  grid-column: 1/4;
 }
 .logo {
   border-radius: 100%;
@@ -45,6 +48,33 @@ header {
   text-align: center;
   font-size: 40px;
 }
+.us {
+  grid-column: 2;
+}
+
+/*lures.html page*/
+#luresandspecies {
+  display: grid;
+  text-align: center;
+}
+#luresandspecies p {
+  font-size: 1.5em;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.fish {
+
+}
+.lures {
+
+}
+.bass {
+  width: 500px;
+}
+.worm {
+  width: 150px;
+}
+
 
 /* The Overlay (background) */
 .overlay {
@@ -59,7 +89,6 @@ header {
     background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-    margin-right: 300px;
   }
   
   /* Position the content inside the overlay */
