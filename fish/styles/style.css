@@ -7,8 +7,7 @@ footer {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   background-color: #535355;
-  outline-width: 1px solid white;
-  font-style: none;
+  font-style: None;
   text-align: center;
 }
 header {
