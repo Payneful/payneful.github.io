@@ -9,13 +9,33 @@
 
   <body>
     <header>
+      <a id="logo_link" href="index.html">
+        <img class="logo" src="images/fishinglogoTest.JPG" alt="Pro Fishing Logo">
+      </a>
+      <h1 class="title">Site Plan</h1>
+      <span class="pages" style="cursor:pointer" onclick="openNav()">&#9776;</span>
+      <!-- In the header above, add the name or your site, your name and class number. For example if you are in section 3 you would put WDD 130.03 -->
+    </header>
+
+    <!-- The overlay -->
+    <div id="myNav" class="overlay">
+
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  
+      <!-- Overlay content -->
+      <div class="overlay-content">
+          <a href="index.html">Home</a>
+          <a href="lures.html">Lures and Species</a>
+          <a href="locations.html">Locations</a>
+          <a href="contactus.html">Contact Us</a>
+      </div>
+    </div>
+
+    <main>
       <h1>Pro Fishers Site Plan</h1>
       <h2>Bradley Payne</h2>
       <h2>WDD 130-03</h2>
-      <!-- In the header above, add the name or your site, your name and class number. For example if you are in section 3 you would put WDD 130.03 -->
-    </header>
-    <main>
-
       <!-- ------------------------Steps 2-3------------------------------ -->
       <hr>
       <h2>Overview</h2>
@@ -190,6 +210,20 @@
         to be there along with the capability to click on the fish and see specific information on the fish.
       </p>
       <img src="images/page3Wire.JPG" alt="page 3 wireframe">
+      <footer>
+        <h3>Pro Fishing &copy; 2022 - Bradley Payne</h3>
+        <h3><a href="site-plan.html">Site Plan</a></h3>
+        <h3><a href="contactus.html">Contact Us</a></h3>
+      </footer>
     </main>
+    <script>
+      function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+      }
+      
+      function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+      }
+  </script>
   </body>
 </html>
