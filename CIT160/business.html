@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Computers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      padding: 0 0;
+      margin: 0 20%;
+      background-color: white;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    body {
+      background-color: rgba(128, 128, 128, 0.388);
+    }
+
+    footer {
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: calc(60% - 17px);
+      height: 7%;
+      background: grey;
+    }
+
+    header {
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    #contact {
+      font-size: calc(70% + 4px);
+    }
+
+    #computer1 {
+      grid-row: 1;
+      grid-column: 1;
+    }
+
+    #corsair {
+      height: 100%;
+      width: 100%;
+    }
+
+    #motto {
+      text-align: center;
+      font-size: calc(80% + 12px);
+    }
+    
+    #title {
+      margin-top: 0;
+      font-size: calc(80% + 28px);
+    }
+
+    #computer2 {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    #whitecomputer {
+      height: 100%;
+      width: 100%;
+    }
+
+    .images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      font-size: 8px;
+      grid-gap: 10px;
+      padding: 15px 50px;
+    }
+
+    @media (max-width:1100px) {
+      .images {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+
+      body {
+        padding-bottom: 15%;
+      }
+
+      #computer2 {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      #computer1 {
+        grid-column: 1;
+        grid-row: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">Custom Computers</h1>
+  </header>
+  <p id="motto">
+    We are here to serve you in all your computer needs. From fixing broken
+    computers to making your dream computer for you.
+  </p>
+  <div class="images">
+    <div id="computer1">
+      <img alt="corsaircomputerbuild" id="corsair" src="https://pbs.twimg.com/media/FN0E1geWYAQbfwJ?format=jpg&name=small">https://twitter.com/CORSAIR/status/1503408112929177602
+    </div>
+    <div id="computer2">
+      <img alt="whitecomputerbuild" id="whitecomputer" src="https://cdna.pcpartpicker.com/static/forever/images/userbuild/272328.7e5c6962a1f6f85d6f360d39f21ca69a.1600.jpg">https://pcpartpicker.com/b/qRD2FT
+    </div>
+  </div>
+  <footer>
+    <p id="contact">
+      Please give us a call at (111)111-1111 or email us at service@customcomputers.com
+    </p>
+  </footer>
+</body>
+</html>
