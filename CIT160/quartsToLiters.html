@@ -44,7 +44,7 @@
         function quartsToLiters() {
             reset();
             // Get the amount of quarts to convert to liters
-            while (!quarts) {
+            while (!quarts || quarts <= 0) {
                 quarts = prompt("Please enter the amount of quarts:");
                 if (containsOtherChars(quarts))
                     quarts = null;
@@ -67,7 +67,7 @@
         function litersToQuarts() {
             reset();
             // Get the amount of quarts to convert to liters
-            while (!liters) {
+            while (!liters || liters <= 0) {
                 liters = prompt("Please enter the amount of liters:");
                 if (containsOtherChars(liters))
                     liters = null;

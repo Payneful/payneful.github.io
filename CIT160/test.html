@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Test</title>
+<script>
+
+function calculate() {
+    let a = parseInt(document.getElementById("a").value);
+    // let b = parseInt(document.getElementById("b").value);
+    // let c = parseInt(document.getElementById("c").value);
+
+    document.getElementById('outputDiv').innerHTML = answer;
+}
+</script>
+</head>
+
+<body>
+a: <input type="text" id="a"><br>
+b: <input type="text" id="b"><br>
+c: <input type="text" id="c"><br>
+
+<button type="button" onclick="calculate()">calculate</button>
+<div id="outputDiv"></div>
+</body>
+</html>
