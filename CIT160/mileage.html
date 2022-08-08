@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Program to Calculate MPG</title>
+    <style>
+        body {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            text-align: center;
+            outline: 2px black solid;
+            margin-right: 25%;
+            margin-left: 25%;
+        }
+    </style>
+    <script>
+        /* Defining Table
+        * Input: Beginning, ending odometer, and gallons
+        * Processing: Calculates the MPG
+        * Output: MPG
+        */
+       function calculateMPG() {
+        // Get the user's inputted starting and ending mileage
+        let begMileage = document.getElementById('beginningMileage').value;
+        let endMileage = document.getElementById('endingMileage').value;
+        let gallons = document.getElementById('gallons').value;
+
+        // Calculate the MPG
+        let mpg = (endMileage - begMileage) / gallons;
+
+        // Display the MPG
+        let sentence = "You got " + mpg + " MPG";
+        alert(sentence);
+        //document.getElementById('outputDiv').innerHTML = "You got " + mpg + " MPG";
+       }
+    </script>
+</head>
+<body>
+Beginning Odometer Mileage: <input type="text" id="beginningMileage"><br><br>
+Ending Odometer Mileage: <input type="text" id="endingMileage"><br><br>
+Gallons Used: <input type="text" id="gallons"><br><br>
+<button type="button" onclick="calculateMPG()">Calculate MPG</button><br>
+</body>
+</html>

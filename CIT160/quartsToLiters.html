@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Program to Convert Quarts to Liters</title>
+    <script>
+        // Global variables
+        let liters = 0;
+        let quarts = 0;
+
+        // Resets variables for repeated use
+        function reset() {
+            liters = null;
+            quarts = null;
+        }
+
+        // determines if the input value is a number
+        // Return true if it is a number
+        function containsOtherChars(num) {
+            const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,<>\/?~]/;
+            const letters = /[a-zA-Z]/;
+            if (specialChars.test(num) || letters.test(num))
+                return true;
+            return false;
+        }
+
+        // Sets the width for spacing
+        // Returns the amount of spaces specified
+        function setw(num) {
+            let width = "";
+            for (let i = 0; i < num; i++) {
+                width += " ";
+            }            
+            return width;
+        }
+
+        /* Defining Table
+        * Input: The number of quarts
+        * Processing: Converts quarts to liters
+        * Output: The amount of liters
+        */
+        function quartsToLiters() {
+            reset();
+            // Get the amount of quarts to convert to liters
+            while (!quarts) {
+                quarts = prompt("Please enter the amount of quarts:");
+                if (containsOtherChars(quarts))
+                    quarts = null;
+            }
+
+            // Calculate the amount of liters
+            liters = quarts / 1.057;
+
+            // Display the resulting liters to the user
+            alert("Quarts - " + quarts +
+                "\nLiters -   " + liters.toPrecision(3) + "\n" +
+                setw(14) + liters);
+        }
+
+        /* Defining Table
+        * Input: The number of liters
+        * Processing: Converts liters to quarts
+        * Output: The amount of quarts
+        */
+        function litersToQuarts() {
+            reset();
+            // Get the amount of quarts to convert to liters
+            while (!liters) {
+                liters = prompt("Please enter the amount of liters:");
+                if (containsOtherChars(liters))
+                    liters = null;
+            }
+
+            // Calculate the amount of liters
+            quarts = liters * 1.057;
+
+            // Display the resulting liters to the user
+            alert("Liters -   " + liters +
+                "\nQuarts - " + quarts.toPrecision(3) + "\n" + 
+                setw(14) + quarts);
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="quartsToLiters()">Quarts to Liters</button><br>
+    <button type="button" onclick="litersToQuarts()">Liters to Quarts</button>
+</body>
+</html>
