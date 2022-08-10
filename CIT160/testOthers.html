@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quarts to Liters</title>
+<script> 
+    function calculateLiters() {
+        let volumeInQuarts = parseFloat(document.getElementById("quarts").value)
+        let litersInQuart = 0.946353;
+        let volumeInLiters = volumeInQuarts * litersInQuart;
+
+    document.getElementById("outputDiv").innerHTML = volumeInLiters;
+    }
+ </script>
+ <style>
+
+     button {
+         padding: 3px;
+         border-radius: 7px;
+         font-size: 12pt;
+         background-color: lightgreen;}
+
+
+     input {
+         padding: 3px;
+         border-radius: 7px;
+         font-size: 10pt;}
+
+     p { 
+         font-size: 12pt;}
+
+ </style>
+
+</head>
+<body>
+    <h1>Conversion</h1>
+    <h3>Convert Quarts to Liters</h3>
+    <p><b>Quarts</b> <input value="0" id="quarts" size="5"></p>
+    <p><b>Liters = <span id="outputDiv"></span></b></p>
+    <button Type= "button" onclick="calculateLiters()">Convert</button>
+    
+</body>
+</html>
