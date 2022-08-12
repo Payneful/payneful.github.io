@@ -4,26 +4,26 @@
 <meta charset="utf-8">
 <title>Applied Scripture</title>
 <script>
-/* Defining Table
- * Input: A person's name
- * Processing: Create a verse of scripture for that person
- * Output: The scripture
- */
-function applyScripture() {
-    // Get the user's name from the text field that has the id
-    // of "nameInputBox" and store it in a variable named name.
-    let name = document.getElementById('nameInputBox').value;
-    let bodyPart = document.getElementById('bodyPartBox').value;
+    /* Defining Table
+    * Input: A person's name
+    * Processing: Create a verse of scripture for that person
+    * Output: The scripture
+    */
+    function applyScripture() {
+        // Get the user's name from the text field that has the id
+        // of "nameInputBox" and store it in a variable named name.
+        let name = document.getElementById('nameInputBox').value;
+        let bodyPart = document.getElementById('bodyPartBox').value;
 
-    // Use string concatenation to create a verse
-    // of scripture personalized for the user.
-    let scripture = "<br>And " + name + " stretched out his " + bodyPart + " over the sea; " +
-    "and the Lord caused the sea<br>to go back by a strong east wind all that night, and made " +
-    "the sea dry land,<br>and the waters were divided.";
+        // Use string concatenation to create a verse
+        // of scripture personalized for the user.
+        let scripture = "<br>And " + name + " stretched out his " + bodyPart + " over the sea; " +
+        "and the Lord caused the sea<br>to go back by a strong east wind all that night, and made " +
+        "the sea dry land,<br>and the waters were divided.";
 
-    // Display the scripture in the div that has the id "outputDiv".
-    document.getElementById('outputDiv').innerHTML = scripture;
-}
+        // Display the scripture in the div that has the id "outputDiv".
+        document.getElementById('outputDiv').innerHTML = scripture;
+    }
 </script>
 </head>
 

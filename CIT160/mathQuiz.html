@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mathQuiz</title>
+    <style>
+        body {
+            padding-bottom: 20px;
+            text-align: left;
+            outline: 2px black solid;
+            margin-right: 25%;
+            margin-left: 25%;
+            padding-left: 2%;
+        }
+        input {
+            width: 45px;
+        }
+        button {
+            margin-top: 1px;
+        }
+        h2 {
+            margin: 5px 0px;
+        }
+    </style>
+    <script>
+        /* Defining Table
+        * Input: 2 numbers and an operator.
+        * Processing: Calculates the math.
+        * Output: Solution to the math problem.
+        */
+        function calculateValue() {
+            let first = parseFloat(document.getElementById("firstNumber").value);
+            let operator = document.getElementById("mathOperator").value;
+            let second = parseFloat(document.getElementById("secondNumber").value);
+            let answer = parseFloat(document.getElementById("answer").value);
+            let correct = false;
+            let outputString;
+
+            if (first != "" && second != "" && answer != "") {
+                switch(operator) {
+                    case "+":
+                        if ((first + second) == answer)
+                            correct = true;
+                        break;
+                    case "-":
+                    if ((first - second) == answer)
+                            correct = true;
+                        break;
+                    case "*":
+                    if ((first * second) == answer)
+                            correct = true;
+                        break;
+                    case "/":
+                    if ((first / second) == answer)
+                            correct = true;
+                        break;
+                    case "%":
+                    if ((first % second) == answer)
+                            correct = true;
+                        break;
+                    default:
+                        alert("Incorrect operator");
+                        break;
+                }
+    
+                if (correct) {
+                    outputString = "Correct! Good Job!";
+                } else {
+                    outputString = "Incorrect! Try Again!";
+                }
+    
+                document.getElementById("output").innerHTML = outputString;
+
+            } else {
+                alert("A value Was Not Inputted.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Test Your Math Skills!</h2>
+    <input type="number" id="firstNumber">
+    <input type="text" id="mathOperator">
+    <input type="number" id="secondNumber"> = 
+    <input type="number" id="answer"><br>
+    <button type="button" onclick="calculateValue()">Check</button>
+    <div id="output"></div>
+</body>
+</html>
