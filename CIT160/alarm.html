@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <script>
+        function isHoliday(month, dayOfMonth) {
+            if (month == 0 && dayOfMonth == 1)
+                return true;
+            if (month == 6 && dayOfMonth == 4)
+                return true;
+            if (month == 11 && dayOfMonth == 25)
+                return true;
+            return false;
+        }
+        /* Defining Table
+        * Input: Clock times and days
+        * Processing: Determine if alarm clock is on
+        * Output: wake up or sleep in
+        */
+        function alarm() {
+            // set variables
+            let now = new Date();
+            let month = now.getMonth();
+            let dayOfMonth = now.getDate();
+            let dayOfWeek = now.getDay();
+            let alarm = false;
+            let message;
+
+            // Determine if alarm is on
+            if ((dayOfWeek > 0 && dayOfWeek < 6) && (!isHoliday(month, dayOfMonth)))
+                alarm = true;
+
+            if (alarm)
+                message = "Get up!";
+            else
+                message = "Sleep in.";
+            
+            document.getElementById("outputMessage").innerHTML = message;
+        }
+        function showTime() {
+            let now = new Date();
+            let time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+
+            document.getElementById("clock").innerHTML = time;
+            setTimeout(showTime, 1000);
+            setTimeout(alarm, 10000);
+        }
+    </script>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        body {
+            padding-bottom: 15px;
+            text-align: center;
+            outline: 2px black solid;
+            margin-right: 25%;
+            margin-left: 25%;
+        }
+        #output {
+            font-weight: bold;
+        }
+        #displayAmount {
+            margin-top: 1px;
+        }
+    </style>
+</head>
+<body onLoad="showTime(); alarm();">
+    <h1>Alarm</h1>
+    <h2 id="clock"></h2>
+    <h3 id="outputMessage"></h3>
+</body>
+</html>

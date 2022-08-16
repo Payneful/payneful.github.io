@@ -1,44 +1,86 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Quarts to Liters</title>
-<script> 
-    function calculateLiters() {
-        let volumeInQuarts = parseFloat(document.getElementById("quarts").value)
-        let litersInQuart = 0.946353;
-        let volumeInLiters = volumeInQuarts * litersInQuart;
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz</title>
+    <script>
+        function myFunction() {
 
-    document.getElementById("outputDiv").innerHTML = volumeInLiters;
-    }
- </script>
- <style>
+            // inputs
+            let firstNumber = parseFloat(document.getElementById("n1").value);
+            let secondNumber = parseFloat(document.getElementById("n2").value);
+            let solution = parseFloat(document.getElementById("n3").value);
+            let operator = document.getElementById("op").value;
 
-     button {
-         padding: 3px;
-         border-radius: 7px;
-         font-size: 12pt;
-         background-color: lightgreen;}
+            //equations
+            let addition = firstNumber + secondNumber;
+            let subtraction = firstNumber - secondNumber;
+            let division = firstNumber / secondNumber;
+            let multiplication = firstNumber * secondNumber;
 
+            //switch statement
+           switch (operator){
+                //addition
+                case '+':
+                    if (addition != solution) {
+                    document.getElementById("output").innerHTML = "That is incorrect, please try again.";
+                    } else {
+                        document.getElementById("output").innerHTML = "That is Correct!";
+                    }
+                break;
 
-     input {
-         padding: 3px;
-         border-radius: 7px;
-         font-size: 10pt;}
+                //subtraction
+                case '-':
+                    if (subtraction != solution) {
+                    document.getElementById("output").innerHTML = "That is incorrect, please try again.";
+                    } else {
+                        document.getElementById("output").innerHTML = "That is Correct!";
+                    }
+                break;
 
-     p { 
-         font-size: 12pt;}
+                //division
+                case '/':
+                    if (division != solution) {
+                        document.getElementById("output").innerHTML = "That is incorrect, please try again.";
+                    } else {
+                        document.getElementById("output").innerHTML = "That is Correct!";
+                    }
+                break;
 
- </style>
-
+                //multiplication
+                case '*':
+                    if (multiplication != solution) {
+                        document.getElementById("output").innerHTML = "That is incorrect, please try again.";
+                    } else {
+                        document.getElementById("output").innerHTML = "That is Correct!";
+                    }
+                break;
+           }
+        }
+    </script>
 </head>
 <body>
-    <h1>Conversion</h1>
-    <h3>Convert Quarts to Liters</h3>
-    <p><b>Quarts</b> <input value="0" id="quarts" size="5"></p>
-    <p><b>Liters = <span id="outputDiv"></span></b></p>
-    <button Type= "button" onclick="calculateLiters()">Convert</button>
-    
+    <h1>Test Your Math Skills!</h1>
+    <div>
+        <form>
+        <input type="text" id="n1" size="15" placeholder="First Number">
+        <select id="op">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">÷</option>
+            <option value="*">x</option>
+        </select>
+        <input type="text" id="n2" size="15" placeholder="Second Number">
+        = <input type="text" id="n3" size="10" placeholder="Solution">
+        <button type="button" onclick="myFunction()">Click to check your answer</button>
+        </form>
+
+    </div>
+    <br>
+    <div id="output">
+       
+    </div>
 </body>
 </html>
