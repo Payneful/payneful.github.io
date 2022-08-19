@@ -16,13 +16,19 @@
             let upToValue = parseInt(document.getElementById("oddsTo").value);
             let total = 0;
 
-            // Loops and add values
-            for (let x = 1; x < upToValue + 1; x+=2) {
-                total += x;
-            }
+            // Check for valid input
+            if (upToValue > 1) {
+                // Loops and add values
+                for (let x = 1; x < upToValue + 1; x+=2) {
+                    total += x;
+                }
 
-            // Output total
-            document.getElementById("output").innerHTML = total;
+                // Output total
+                document.getElementById("output").innerHTML = "Total value of odds up to "+ upToValue + " is " + total;
+
+                return;
+            }
+            document.getElementById("output").innerHTML = "Please enter a positive value above 1";
         }
     </script>
     <style>
