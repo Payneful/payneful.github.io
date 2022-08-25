@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Title</title>
+<script>
+    /* Input: 3 values
+    * Processing: determines divisibility between two numbers
+    * Output: values divisible
+    */
+    function divisibility() {
+        let start = parseInt(document.getElementById("start").value);
+        let end = parseInt(document.getElementById("end").value);
+        let divisor = parseInt(document.getElementById("divisor").value);
+        let dividends = "";
+
+        for (let i = start; i <= end; i++) {
+            if (i % divisor == 0)
+                dividends += (" " + i)
+        }
+        document.getElementById("output").innerHTML = dividends;
+    }
+
+</script>
+</head>
+
+<body>
+Start: <input type="text" id="start" size="5"><br>
+End: <input type="text" id="end" size="5"><br>
+Divisor: <input type="text" id="divisor" size="5"><br>
+<button type="button" onclick="divisibility()">Click</button>
+<div id="output"></div>
+</body>
+</html>
