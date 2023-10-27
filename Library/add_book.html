@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+		<h1>Add a Book</h1>
+		<form id="book-form">
+			<label for="title">Title:</label>
+			<input type="text" id="author" required>
+			<label for="author">Author:</label>
+			<input type="text" id="author" required>
+			<label for="series">Series:</label>
+			<select id="series" name="series">
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
+			</select>
+			<label for="bookNumber" id="bookNumberLabel">Book #:</label>
+			<input type="number" id="bookNumber" style="display: block;" name="bookNumber" min="1">
+			<label for="genre">Genre:</label>
+			<select id="genre">
+				<option value="Biography">Biography</option>
+				<option value="Cooking">Cooking</option>
+				<option value="Educational">Educational</option>
+				<option value="Fantasy">Fantasy</option>
+				<option value="Health & Fitness">Health & Fitness</option>
+				<option value="Historical">Historical</option>
+				<option value="Hobbies & Home">Hobbies & Home</option>
+				<option value="Horror">Horror</option>
+				<option value="Informational">Informational</option>
+				<option value="Mystery">Mystery</option>
+				<option value="Romance">Romance</option>
+				<option value="Sci-Fi">Sci-Fi</option>
+			</select>
+			<label for="type">Type (softback or hardback):</label>
+			<select id="type">
+				<option value="hardback">Hardback</option>
+				<option value="softback">Softback</option>
+			</select>
+			<label for="Ages">Ages:</label>
+			<select id="Ages">
+				<option value="A">Adult</option>
+				<option value="YA">Young Adults</option>
+				<option value="C">Childrens</option>
+			</select>
+			<div class="button-container">
+				<a href="index.html">Back</a>
+				<button type='submit'>Add Book</button>
+			</div>
+		</form>
+
+		<script src="https://www.gstatic.com/firebasejs/9.3.2/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/9.3.2/firebase-firestore.js"></script>
+		<script type="module" src="add_script.js"></script>
+		<script>
+			const seriesDropdown = document.getElementById('series');
+			const bookNumberInput = document.getElementById('bookNumber');
+			const bookNumberLabel = document.getElementById('bookNumberLabel');
+
+			seriesDropdown.addEventListener('change', function() {
+				if (seriesDropdown.value === 'No') {
+					bookNumberInput.style.display = 'none';
+					bookNumberInput.removeAttribute('name'); // Remove the name attribute
+					bookNumberLabel.style.display = 'none'; // Hide the label
+				} else {
+					bookNumberInput.style.display = 'block';
+					bookNumberInput.setAttribute('name', 'bookNumber'); // Restore the name attribute
+					bookNumberLabel.style.display = 'block'; // Show the label
+				}
+			});
+		</script>
+		<script>
+			import { initializeApp } from 'firebase/app';
+			// Replace with your Firebase project configuration
+			const firebaseConfig = {
+				apiKey: 'AIzaSyB07DRv8iUahm2QEm_ogqZ6Bb1rBQHGdLY',
+				authDomain: 'library-e11db.firebaseapp.com',
+				projectId: 'library-e11db',
+			};
+
+			alert("Hello");
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
+
+			const db = firebase.firestore();
+
+			const bookForm = document.getElementById('book-form');
+			bookForm.addEventListener('submit', (e) => {
+				e.preventDefault();
+
+				const title = document.getElementById('title').value;
+				alert(title);
+				const author = document.getElementById('author').value;
+				alert(author);
+				const bookNumber = parseInt(document.getElementById('bookNumber').value);
+				alert(bookNumber);
+				const genre = document.getElementById('genre').value;
+				alert(genre);
+				const series = document.getElementById('series').value;
+				alert(series);
+				const type = document.getElementById('type').value;
+				alert(type);
+
+				// Add the book to Firestore
+				db.collection('Books').add(title)
+				db.collection('Books').doc(title).set({
+					Author: author,
+					BookNumber: bookNumber,
+					Genre: genre,
+					Series: (series === 'Yes'),
+					Type: type,
+					})
+					.then(() => {
+							alert('Book added to Firestore');
+							bookForm.reset();
+					})
+					.catch((error) => {
+							console.error('Error adding book: ', error);
+					});
+			});
+		</script>
+	</div>
+</body>
+</html>

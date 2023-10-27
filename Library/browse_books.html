@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Browse Books</title>
+  <style>
+    /* Style for book boxes */
+    .book-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      width: 300px;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    /* Style for book details */
+    .book-details {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Browse Books</h1>
+  <div id="books-container"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js"></script>
+  <script>
+    // Initialize Firebase
+    const firebaseConfig = {
+			apiKey: 'AIzaSyB07DRv8iUahm2QEm_ogqZ6Bb1rBQHGdLY',
+			authDomain: 'library-e11db.firebaseapp.com',
+			projectId: 'library-e11db',
+		};
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // Function to fetch and display books
+    function fetchAndDisplayBooks() {
+      const booksContainer = document.getElementById('books-container');
+
+      db.collection('Books').get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          const bookBox = document.createElement('div');
+          bookBox.classList.add('book-box');
+
+          const bookDetails = document.createElement('div');
+          bookDetails.classList.add('book-details');
+          bookDetails.innerHTML = `
+            <p><strong>Title:</strong> ${doc.id}</p>
+            <p><strong>Author:</strong> ${data.Author}</p>
+            <p><strong>Book Number:</strong> ${data.BookNumber}</p>
+            <p><strong>Genre:</strong> ${data.Genre}</p>
+            <p><strong>Series:</strong> ${data.Series ? 'Yes' : 'No'}</p>
+            <p><strong>Type:</strong> ${data.Type}</p>
+          `;
+
+          bookBox.appendChild(bookDetails);
+          booksContainer.appendChild(bookBox);
+        });
+      });
+    }
+
+    // Call the function to fetch and display books
+    fetchAndDisplayBooks();
+  </script>
+</body>
+</html>
