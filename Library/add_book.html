@@ -47,13 +47,40 @@
 			</select>
 			<div class="button-container">
 				<a href="index.html">Back</a>
-				<button type='submit'>Add Book</button>
+				<button type='submit' id="submit-button">Submit</button>
 			</div>
 		</form>
 
 		<script src="https://www.gstatic.com/firebasejs/9.3.2/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/9.3.2/firebase-firestore.js"></script>
 		<script type="module" src="add_script.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+			const bookForm = document.getElementById('book-form');
+			const submitButton = document.getElementById('submit-button'); // Get the submit button
+
+			bookForm.addEventListener('submit', (e) => {
+				e.preventDefault();
+
+				const title = document.getElementById('title').value;
+				const author = document.getElementById('author').value;
+				const bookNumber = parseInt(document.getElementById('bookNumber').value);
+				const genre = document.getElementById('genre').value;
+				const series = document.getElementById('series').value;
+				const type = document.getElementById('type').value;
+
+				addBookToFirestore(title, author, bookNumber, genre, series, type);
+
+				// Reset the form
+				bookForm.reset();
+			});
+			
+			// Add a click event listener to the submit button
+			submitButton.addEventListener('click', () => {
+				bookForm.submit(); // Manually trigger the form submission
+			});
+			});
+		</script>
 		<script>
 			const seriesDropdown = document.getElementById('series');
 			const bookNumberInput = document.getElementById('bookNumber');
@@ -69,56 +96,6 @@
 					bookNumberInput.setAttribute('name', 'bookNumber'); // Restore the name attribute
 					bookNumberLabel.style.display = 'block'; // Show the label
 				}
-			});
-		</script>
-		<script>
-			import { initializeApp } from 'firebase/app';
-			// Replace with your Firebase project configuration
-			const firebaseConfig = {
-				apiKey: 'AIzaSyB07DRv8iUahm2QEm_ogqZ6Bb1rBQHGdLY',
-				authDomain: 'library-e11db.firebaseapp.com',
-				projectId: 'library-e11db',
-			};
-
-			alert("Hello");
-			// Initialize Firebase
-			firebase.initializeApp(firebaseConfig);
-
-			const db = firebase.firestore();
-
-			const bookForm = document.getElementById('book-form');
-			bookForm.addEventListener('submit', (e) => {
-				e.preventDefault();
-
-				const title = document.getElementById('title').value;
-				alert(title);
-				const author = document.getElementById('author').value;
-				alert(author);
-				const bookNumber = parseInt(document.getElementById('bookNumber').value);
-				alert(bookNumber);
-				const genre = document.getElementById('genre').value;
-				alert(genre);
-				const series = document.getElementById('series').value;
-				alert(series);
-				const type = document.getElementById('type').value;
-				alert(type);
-
-				// Add the book to Firestore
-				db.collection('Books').add(title)
-				db.collection('Books').doc(title).set({
-					Author: author,
-					BookNumber: bookNumber,
-					Genre: genre,
-					Series: (series === 'Yes'),
-					Type: type,
-					})
-					.then(() => {
-							alert('Book added to Firestore');
-							bookForm.reset();
-					})
-					.catch((error) => {
-							console.error('Error adding book: ', error);
-					});
 			});
 		</script>
 	</div>
